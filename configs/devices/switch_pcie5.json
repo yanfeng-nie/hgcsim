@@ -1,0 +1,20 @@
+{
+  "kind": "switch",
+  "id": "pciesw0",
+  "type": "PCIe",
+  "params": {
+    "max_gen": 5
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 5,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "switch_pcie5",
+  "description": "PCIe 5.0 交换机（8 端口，支持 P2P），上行 PCIe 5.0 x16"
+}

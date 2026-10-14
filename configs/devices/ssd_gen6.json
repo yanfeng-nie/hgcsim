@@ -1,0 +1,29 @@
+{
+  "type": "SSD",
+  "params": {
+    "max_link_gen": 6
+  },
+  "memory": {
+    "type": "FLASH",
+    "params": {
+      "nand_channels": 16,
+      "channel_mtps": 3600,
+      "dies": 256,
+      "controller_bw_gbps": 30,
+      "capacity_tb": 30,
+      "controller_iops_m": 5.5
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 6,
+        "lanes": 4
+      }
+    }
+  },
+  "template": "ssd_gen6",
+  "description": "PCIe 6.0 NVMe SSD 30TB（Micron 9650 量级，≈28GB/s，5.5M IOPS；需主机 max_link_gen≥6）"
+}

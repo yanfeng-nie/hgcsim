@@ -1,0 +1,23 @@
+{
+  "type": "MEM_EXPANDER",
+  "params": {},
+  "memory": {
+    "type": "SCM",
+    "params": {
+      "modules": 4,
+      "gb_per_module": 256
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "DDR",
+      "params": {
+        "channels": 4,
+        "data_rate_mtps": 3200
+      }
+    }
+  },
+  "template": "pmem_dimm",
+  "description": "DIMM 形态持久内存（Optane PMem 量级）：4×256GB，经 DDR 总线挂载"
+}

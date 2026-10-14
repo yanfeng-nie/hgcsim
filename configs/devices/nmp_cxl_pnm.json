@@ -1,0 +1,37 @@
+{
+  "type": "NMP",
+  "params": {
+    "units": 512,
+    "unit_freq_mhz": 1000,
+    "int_ops_per_cycle_per_unit": 8,
+    "fp_ops_per_cycle_per_unit": 8,
+    "unit_bw_gbps": 2.2,
+    "mb_per_unit": 1024,
+    "inter_unit_via_host": 0,
+    "inter_unit_bw_gbps": 200,
+    "host_xfer_efficiency": 0.9,
+    "outstanding_per_unit": 32,
+    "launch_overhead_us": 20,
+    "cxl_max_version": 3.0
+  },
+  "memory": {
+    "type": "DRAM",
+    "params": {
+      "channels": 8,
+      "channel_width_bits": 32,
+      "data_rate_mtps": 6400
+    }
+  },
+  "attach": {
+    "to": "cxlsw0",
+    "link": {
+      "type": "CXL",
+      "params": {
+        "version": 3.0,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "nmp_cxl_pnm",
+  "description": "CXL 近内存处理（CXL-PNM 量级）：512GB LPDDR，内部≈1.1TB/s，经 CXL 挂载（需先添加 cxlsw0）"
+}

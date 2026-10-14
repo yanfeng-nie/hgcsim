@@ -1,0 +1,11 @@
+{
+  "params": {},
+  "memory": {
+    "id": "dram0",
+    "type": "DRAM",
+    "params": {}
+  },
+  "id": "cpu0",
+  "template": "cpu_desktop",
+  "description": "桌面 CPU（默认）：8 核 4.0GHz AVX2，DDR5-5600 双通道 32GB"
+}

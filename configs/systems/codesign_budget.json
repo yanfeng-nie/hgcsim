@@ -1,0 +1,58 @@
+{
+  "name": "codesign_budget",
+  "description": "协同设计赛道模板：从普通 PC 出发，在预算约束（总功耗 ≤ 2500W、总成本 ≤ $60000）内自选硬件与调度。预算模型为简化估算，见 docs/MODEL.md。",
+  "host": {
+    "id": "cpu0",
+    "params": {},
+    "memory": {
+      "id": "dram0",
+      "type": "DRAM",
+      "params": {}
+    }
+  },
+  "devices": [
+    {
+      "id": "gpu0",
+      "type": "GPU",
+      "params": {},
+      "memory": {
+        "type": "GDDR",
+        "params": {}
+      },
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "PCIe",
+          "params": {
+            "gen": 4,
+            "lanes": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "ssd0",
+      "type": "SSD",
+      "params": {},
+      "memory": {
+        "type": "FLASH",
+        "params": {}
+      },
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "PCIe",
+          "params": {
+            "gen": 4,
+            "lanes": 4
+          }
+        }
+      }
+    }
+  ],
+  "budget": {
+    "enabled": true,
+    "power_w": 2500,
+    "cost_usd": 60000
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "FPGA",
+  "params": {},
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 4,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "fpga_alveo_v80",
+  "description": "FPGA（Alveo V80 量级）：10848 DSP，32GB HBM2e 820GB/s，重配置≈150ms"
+}

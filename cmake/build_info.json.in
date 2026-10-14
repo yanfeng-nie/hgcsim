@@ -1,0 +1,9 @@
+{
+  "name": "@HGC_BUILD_NAME@",
+  "time": "@HGC_BUILD_TIME@",
+  "modified": "@HGC_MODIFIED@",
+  "source_fingerprint": "@HGC_SOURCE_FP@",
+  "student_fingerprint": "@HGC_STUDENT_FP@",
+  "plugins": "@HGC_PLUGIN_CSV@",
+  "reserved_names": "@HGC_RESERVED_CSV@"
+}

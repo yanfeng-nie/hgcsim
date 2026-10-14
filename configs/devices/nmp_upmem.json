@@ -1,0 +1,16 @@
+{
+  "type": "NMP",
+  "params": {},
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "DDR",
+      "params": {
+        "channels": 4,
+        "data_rate_mtps": 2400
+      }
+    }
+  },
+  "template": "nmp_upmem",
+  "description": "近内存计算（UPMEM 量级）：2560 DPU @350MHz，160GB，内部≈1.8TB/s，DDR 总线挂载"
+}

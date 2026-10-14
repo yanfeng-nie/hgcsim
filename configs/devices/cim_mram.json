@@ -1,0 +1,16 @@
+{
+  "type": "CIM_MRAM",
+  "params": {},
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 4,
+        "lanes": 8
+      }
+    }
+  },
+  "template": "cim_mram",
+  "description": "MRAM 存算一体卡：4096 个 256×256 阵列（1bit/单元），INT8≈66 TOPS，写入 20ns/行，耐久 1e12"
+}

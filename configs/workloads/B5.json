@@ -1,0 +1,26 @@
+{
+  "name": "B5-ogbn-papers100M",
+  "dataset": {
+    "name": "ogbn-papers100M",
+    "nodes": 111059956,
+    "edges": 1615685872,
+    "feature_dim": 128,
+    "clusters": 172,
+    "has_graph": true,
+    "degree_skew": 0.7,
+    "locality": 0.4,
+    "metis_cut_base": 0.05
+  },
+  "algorithm": {
+    "name": "Dink-Net/S3GC-like",
+    "encoder_dims": [
+      256,
+      64
+    ],
+    "encoder_epochs": 1,
+    "method": "kmeans",
+    "iterations": 20,
+    "prop_hops": 2,
+    "prop_every_iter": false
+  }
+}

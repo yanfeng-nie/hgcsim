@@ -1,0 +1,25 @@
+{
+  "params": {
+    "cores": 32,
+    "freq_ghz": 3.0,
+    "simd_bits": 512,
+    "fma_units": 2,
+    "amx": 1,
+    "llc_mb": 120,
+    "lfb_per_core": 16,
+    "max_link_gen": 5,
+    "cxl_max_version": 3.0
+  },
+  "memory": {
+    "id": "dram0",
+    "type": "DRAM",
+    "params": {
+      "channels": 8,
+      "data_rate_mtps": 4800,
+      "capacity_gb": 256
+    }
+  },
+  "id": "cpu0",
+  "template": "cpu_server_32c",
+  "description": "服务器 CPU：32 核 3.0GHz AVX-512+AMX，DDR5-4800 8 通道 256GB，CXL 3.0"
+}

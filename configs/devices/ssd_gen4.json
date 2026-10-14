@@ -1,0 +1,20 @@
+{
+  "type": "SSD",
+  "params": {},
+  "memory": {
+    "type": "FLASH",
+    "params": {}
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 4,
+        "lanes": 4
+      }
+    }
+  },
+  "template": "ssd_gen4",
+  "description": "PCIe 4.0 NVMe SSD 2TB（默认 PC）"
+}

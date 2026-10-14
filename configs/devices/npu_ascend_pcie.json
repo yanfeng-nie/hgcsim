@@ -1,0 +1,16 @@
+{
+  "type": "NPU",
+  "params": {},
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 5,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "npu_ascend_pcie",
+  "description": "NPU（昇腾 910B 量级）：32 AI Core，FP16≈393 TFLOPS，64GB HBM 1.6TB/s，PCIe 5.0"
+}

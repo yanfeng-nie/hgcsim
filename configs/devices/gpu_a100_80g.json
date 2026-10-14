@@ -1,0 +1,32 @@
+{
+  "type": "GPU",
+  "params": {
+    "sms": 108,
+    "freq_ghz": 1.41,
+    "fp32_flops_per_sm_cycle": 128,
+    "tensor_fp16_flops_per_sm_cycle": 2048,
+    "fp8_ratio": 0,
+    "l2_mb": 40
+  },
+  "memory": {
+    "type": "HBM",
+    "params": {
+      "stacks": 5,
+      "interface_bits": 1024,
+      "gbps_per_pin": 3.2,
+      "gb_per_stack": 16
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 4,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "gpu_a100_80g",
+  "description": "数据中心 GPU（A100 级）：108 SM，FP16 Tensor≈312 TFLOPS，80GB HBM2e≈2TB/s"
+}

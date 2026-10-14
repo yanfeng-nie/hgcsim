@@ -1,0 +1,14 @@
+# HGCSim 前端配置（从仓库根目录启动时生效，scripts/run_frontend.sh 会切换到仓库根目录）
+[theme]
+# 图表配色在浅色背景上校验过，固定使用浅色主题以保证可读性
+base = "light"
+primaryColor = "#2a78d6"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f4f4f1"
+textColor = "#0b0b0b"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+headless = true

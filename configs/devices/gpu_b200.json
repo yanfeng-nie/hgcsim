@@ -1,0 +1,33 @@
+{
+  "type": "GPU",
+  "params": {
+    "sms": 148,
+    "freq_ghz": 1.965,
+    "fp32_flops_per_sm_cycle": 256,
+    "tensor_fp16_flops_per_sm_cycle": 8192,
+    "fp8_ratio": 2,
+    "l2_mb": 126,
+    "max_link_gen": 5
+  },
+  "memory": {
+    "type": "HBM",
+    "params": {
+      "stacks": 8,
+      "interface_bits": 1024,
+      "gbps_per_pin": 7.8,
+      "gb_per_stack": 24
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 5,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "gpu_b200",
+  "description": "Blackwell 级 GPU（B200 量级）：148 SM，FP16 稠密≈2.4 PFLOPS，192GB HBM3E≈8TB/s，PCIe 5.0"
+}

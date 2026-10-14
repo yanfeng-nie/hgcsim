@@ -1,0 +1,272 @@
+{
+  "name": "hetero_lab",
+  "description": "标准答题平台（调度赛道，硬件固定）：32 核服务器 CPU (AVX-512+AMX, CXL 3.0) + DDR5-4800 8 通道 256GB；L40S 级 GPU (48GB GDDR6)；昇腾级 NPU (64GB HBM, 经 CXL 3.0 挂在交换机下)；v5e 级 TPU；Alveo V80 级 FPGA；UPMEM 级近内存计算 (2560 DPU, DDR 总线)；SmartSSD 级可计算存储 (4TB)；RRAM / MRAM 存算一体加速卡；CXL 3.0 交换机下挂 512GB DRAM 内存扩展器与 1TB SCM 扩展器；PCIe 5.0 NVMe 8TB。",
+  "host": {
+    "id": "cpu0",
+    "params": {
+      "cores": 32,
+      "freq_ghz": 3.0,
+      "simd_bits": 512,
+      "fma_units": 2,
+      "amx": 1,
+      "llc_mb": 120,
+      "lfb_per_core": 16,
+      "max_link_gen": 5,
+      "cxl_max_version": 3.0
+    },
+    "memory": {
+      "id": "dram0",
+      "type": "DRAM",
+      "params": {
+        "channels": 8,
+        "data_rate_mtps": 4800,
+        "capacity_gb": 256
+      }
+    }
+  },
+  "switches": [
+    {
+      "id": "cxlsw0",
+      "type": "CXL",
+      "params": {
+        "max_version": 3.0,
+        "latency_ns": 120
+      },
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "CXL",
+          "params": {
+            "version": 3.0,
+            "lanes": 16
+          }
+        }
+      }
+    }
+  ],
+  "devices": [
+    {
+      "id": "gpu0",
+      "type": "GPU",
+      "params": {
+        "sms": 142,
+        "freq_ghz": 2.52,
+        "fp32_flops_per_sm_cycle": 256,
+        "tensor_fp16_flops_per_sm_cycle": 1024,
+        "fp8_ratio": 2,
+        "int8_ratio": 2,
+        "int4_ratio": 4,
+        "l2_mb": 96,
+        "max_link_gen": 4
+      },
+      "memory": {
+        "type": "GDDR",
+        "params": {
+          "bus_width_bits": 384,
+          "gbps_per_pin": 18,
+          "capacity_gb": 48
+        }
+      },
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "PCIe",
+          "params": {
+            "gen": 4,
+            "lanes": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "npu0",
+      "type": "NPU",
+      "params": {
+        "cxl_max_version": 3.0
+      },
+      "attach": {
+        "to": "cxlsw0",
+        "link": {
+          "type": "CXL",
+          "params": {
+            "version": 3.0,
+            "lanes": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "tpu0",
+      "type": "TPU",
+      "params": {},
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "PCIe",
+          "params": {
+            "gen": 4,
+            "lanes": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "fpga0",
+      "type": "FPGA",
+      "params": {},
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "PCIe",
+          "params": {
+            "gen": 4,
+            "lanes": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "nmp0",
+      "type": "NMP",
+      "params": {},
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "DDR",
+          "params": {
+            "channels": 4,
+            "data_rate_mtps": 2400
+          }
+        }
+      }
+    },
+    {
+      "id": "csd0",
+      "type": "CSD",
+      "params": {},
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "PCIe",
+          "params": {
+            "gen": 3,
+            "lanes": 4
+          }
+        }
+      }
+    },
+    {
+      "id": "rram0",
+      "type": "CIM_RRAM",
+      "params": {},
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "PCIe",
+          "params": {
+            "gen": 4,
+            "lanes": 8
+          }
+        }
+      }
+    },
+    {
+      "id": "mram0",
+      "type": "CIM_MRAM",
+      "params": {},
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "PCIe",
+          "params": {
+            "gen": 4,
+            "lanes": 8
+          }
+        }
+      }
+    },
+    {
+      "id": "cxlmem0",
+      "type": "MEM_EXPANDER",
+      "params": {
+        "cxl_max_version": 3.0
+      },
+      "memory": {
+        "type": "DRAM",
+        "params": {
+          "channels": 4,
+          "data_rate_mtps": 5600,
+          "capacity_gb": 512
+        }
+      },
+      "attach": {
+        "to": "cxlsw0",
+        "link": {
+          "type": "CXL",
+          "params": {
+            "version": 3.0,
+            "lanes": 16
+          }
+        }
+      }
+    },
+    {
+      "id": "scm0",
+      "type": "MEM_EXPANDER",
+      "params": {
+        "cxl_max_version": 3.0
+      },
+      "memory": {
+        "type": "SCM",
+        "params": {
+          "modules": 4,
+          "gb_per_module": 256
+        }
+      },
+      "attach": {
+        "to": "cxlsw0",
+        "link": {
+          "type": "CXL",
+          "params": {
+            "version": 3.0,
+            "lanes": 8
+          }
+        }
+      }
+    },
+    {
+      "id": "ssd0",
+      "type": "SSD",
+      "params": {
+        "max_link_gen": 5
+      },
+      "memory": {
+        "type": "FLASH",
+        "params": {
+          "nand_channels": 8,
+          "channel_mtps": 3600,
+          "dies": 128,
+          "read_latency_us": 50,
+          "controller_bw_gbps": 15,
+          "capacity_tb": 8,
+          "controller_iops_m": 2.5
+        }
+      },
+      "attach": {
+        "to": "cpu0",
+        "link": {
+          "type": "PCIe",
+          "params": {
+            "gen": 5,
+            "lanes": 4
+          }
+        }
+      }
+    }
+  ],
+  "budget": {
+    "enabled": false,
+    "power_w": 0,
+    "cost_usd": 0
+  }
+}

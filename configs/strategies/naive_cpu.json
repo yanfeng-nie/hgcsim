@@ -1,0 +1,13 @@
+{
+  "name": "naive_cpu",
+  "description": "全部阶段在主机 CPU 上执行，FP32，不做流水线重叠（同构基线）",
+  "placement": {"features": "home", "graph": "home", "spill": "auto"},
+  "partition": {"num_chunks": "auto", "method": "range"},
+  "pipeline": {"overlap": false, "prefetch_depth": 1},
+  "stages": {
+    "feature_extraction": {"devices": ["cpu0"], "precision": "fp32"},
+    "graph_construction": {"devices": ["cpu0"], "precision": "fp32"},
+    "clustering": {"devices": ["cpu0"], "precision": "fp32"}
+  },
+  "leader": "cpu0"
+}

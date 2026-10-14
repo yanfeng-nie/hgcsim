@@ -1,0 +1,26 @@
+{
+  "type": "MEM_EXPANDER",
+  "params": {
+    "cxl_max_version": 3.0
+  },
+  "memory": {
+    "type": "DRAM",
+    "params": {
+      "channels": 4,
+      "data_rate_mtps": 5600,
+      "capacity_gb": 512
+    }
+  },
+  "attach": {
+    "to": "cxlsw0",
+    "link": {
+      "type": "CXL",
+      "params": {
+        "version": 3.0,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "cxl_mem_512g",
+  "description": "CXL Type-3 内存扩展器：512GB DDR5-5600 4 通道，CXL 3.0 x16（需先添加 cxlsw0）"
+}

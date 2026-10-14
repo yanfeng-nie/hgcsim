@@ -1,0 +1,28 @@
+{
+  "name": "B6-SIFT1M",
+  "dataset": {
+    "name": "SIFT1M",
+    "nodes": 1000000,
+    "edges": 0,
+    "feature_dim": 128,
+    "clusters": 100,
+    "has_graph": false,
+    "knn_k": 10,
+    "degree_skew": 0.2,
+    "locality": 0.1,
+    "metis_cut_base": 0.1
+  },
+  "algorithm": {
+    "name": "kNN graph + Spectral",
+    "encoder_dims": [
+      64
+    ],
+    "encoder_epochs": 0,
+    "method": "spectral",
+    "iterations": 20,
+    "prop_hops": 1,
+    "lanczos_block": 32,
+    "kmeans_after": 20,
+    "knn_candidate_ratio": 1.0
+  }
+}

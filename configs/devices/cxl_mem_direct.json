@@ -1,0 +1,24 @@
+{
+  "type": "MEM_EXPANDER",
+  "params": {},
+  "memory": {
+    "type": "DRAM",
+    "params": {
+      "channels": 2,
+      "data_rate_mtps": 5600,
+      "capacity_gb": 256
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "CXL",
+      "params": {
+        "version": 2.0,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "cxl_mem_direct",
+  "description": "CXL Type-3 内存扩展器直连主机（无交换机）：256GB，CXL 2.0 x16（需主机 cxl_max_version≥2.0）"
+}

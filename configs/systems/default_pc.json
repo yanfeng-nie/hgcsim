@@ -1,0 +1,22 @@
+{
+  "name": "default_pc",
+  "description": "普通台式计算机（模拟器默认状态）：8 核 4.0GHz CPU (AVX2) + DDR5-5600 双通道 32GB + 消费级独显 (46 SM, 12GB GDDR6X, PCIe 4.0 x16) + PCIe 4.0 x4 NVMe SSD 2TB。所有异构设备、HBM、SCM、CXL 均未挂载。",
+  "host": {
+    "id": "cpu0",
+    "params": {},
+    "memory": {"id": "dram0", "type": "DRAM", "params": {}}
+  },
+  "devices": [
+    {
+      "id": "gpu0", "type": "GPU", "params": {},
+      "memory": {"type": "GDDR", "params": {}},
+      "attach": {"to": "cpu0", "link": {"type": "PCIe", "params": {"gen": 4, "lanes": 16}}}
+    },
+    {
+      "id": "ssd0", "type": "SSD", "params": {},
+      "memory": {"type": "FLASH", "params": {}},
+      "attach": {"to": "cpu0", "link": {"type": "PCIe", "params": {"gen": 4, "lanes": 4}}}
+    }
+  ],
+  "budget": {"enabled": false, "power_w": 0, "cost_usd": 0}
+}

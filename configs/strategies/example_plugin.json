@@ -1,0 +1,6 @@
+{
+  "name": "example_plugin",
+  "description": "C++ 插件示例（plugins/example_scheduler.cpp）：每阶段选单个最快设备",
+  "plugin": "build/plugins/libexample_scheduler.so",
+  "plugin_args": {}
+}

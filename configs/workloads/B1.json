@@ -1,0 +1,26 @@
+{
+  "name": "B1-Cora",
+  "dataset": {
+    "name": "Cora",
+    "nodes": 2708,
+    "edges": 10556,
+    "feature_dim": 1433,
+    "clusters": 7,
+    "has_graph": true,
+    "degree_skew": 0.5,
+    "locality": 0.5,
+    "metis_cut_base": 0.05
+  },
+  "algorithm": {
+    "name": "GAE+KMeans",
+    "encoder_dims": [
+      256,
+      16
+    ],
+    "encoder_epochs": 200,
+    "method": "kmeans",
+    "iterations": 50,
+    "prop_hops": 2,
+    "prop_every_iter": false
+  }
+}

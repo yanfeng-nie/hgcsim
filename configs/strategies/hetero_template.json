@@ -1,0 +1,18 @@
+{
+  "name": "hetero_template",
+  "description": "JSON 策略模板（入门接口）：展示全部可配置项，答题时在此基础上修改",
+  "dataset_location": "ssd0",
+  "placement": {"features": "home", "graph": "home", "spill": "auto"},
+  "partition": {"num_chunks": "auto", "method": "range"},
+  "pipeline": {"overlap": true, "prefetch_depth": 2, "halo_cache": false},
+  "stages": {
+    "feature_extraction": {"devices": [{"id": "gpu0", "share": 1.0}], "precision": "fp16", "assign": "static"},
+    "graph_construction": {"devices": [{"id": "cpu0", "share": 1.0}], "precision": "fp32"},
+    "clustering": {
+      "devices": [{"id": "gpu0", "share": 1.0}], "precision": "fp16", "zero_copy": false,
+      "propagation": {"devices": [{"id": "gpu0", "share": 1.0}], "precision": "fp16"},
+      "assignment": {"devices": [{"id": "gpu0", "share": 1.0}], "precision": "fp16"}
+    }
+  },
+  "leader": "cpu0"
+}

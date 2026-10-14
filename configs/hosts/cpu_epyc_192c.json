@@ -1,0 +1,25 @@
+{
+  "params": {
+    "cores": 192,
+    "freq_ghz": 3.35,
+    "simd_bits": 512,
+    "fma_units": 2,
+    "amx": 0,
+    "llc_mb": 384,
+    "lfb_per_core": 16,
+    "max_link_gen": 5,
+    "cxl_max_version": 2.0
+  },
+  "memory": {
+    "id": "dram0",
+    "type": "DRAM",
+    "params": {
+      "channels": 12,
+      "data_rate_mtps": 6400,
+      "capacity_gb": 1536
+    }
+  },
+  "id": "cpu0",
+  "template": "cpu_epyc_192c",
+  "description": "顶级服务器 CPU（EPYC 9965 量级）：192 核 3.35GHz 全核，AVX-512，384MB L3，DDR5-6400 12 通道 1.5TB，CXL 2.0"
+}

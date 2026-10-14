@@ -1,0 +1,20 @@
+{
+  "kind": "switch",
+  "id": "cxlsw0",
+  "type": "CXL",
+  "params": {
+    "max_version": 3.0
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "CXL",
+      "params": {
+        "version": 3.0,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "switch_cxl3",
+  "description": "CXL 3.0 交换机（16 端口），上行 CXL 3.0 x16 到主机（需主机 cxl_max_version≥3.0）"
+}

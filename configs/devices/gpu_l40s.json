@@ -1,0 +1,31 @@
+{
+  "type": "GPU",
+  "params": {
+    "sms": 142,
+    "freq_ghz": 2.52,
+    "fp32_flops_per_sm_cycle": 256,
+    "tensor_fp16_flops_per_sm_cycle": 1024,
+    "fp8_ratio": 2,
+    "l2_mb": 96
+  },
+  "memory": {
+    "type": "GDDR",
+    "params": {
+      "bus_width_bits": 384,
+      "gbps_per_pin": 18,
+      "capacity_gb": 48
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 4,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "gpu_l40s",
+  "description": "数据中心 GPU（L40S 级）：142 SM，FP16 Tensor≈362 TFLOPS，48GB GDDR6 864GB/s"
+}

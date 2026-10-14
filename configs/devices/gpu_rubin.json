@@ -1,0 +1,33 @@
+{
+  "type": "GPU",
+  "params": {
+    "sms": 224,
+    "freq_ghz": 1.9,
+    "fp32_flops_per_sm_cycle": 256,
+    "tensor_fp16_flops_per_sm_cycle": 18432,
+    "fp8_ratio": 2,
+    "l2_mb": 256,
+    "max_link_gen": 6
+  },
+  "memory": {
+    "type": "HBM",
+    "params": {
+      "stacks": 8,
+      "interface_bits": 2048,
+      "gbps_per_pin": 10.74,
+      "gb_per_stack": 36
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 6,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "gpu_rubin",
+  "description": "Rubin 级 GPU（2026 上界）：224 SM，FP8≈16 PFLOPS(估)，288GB HBM4≈22TB/s，PCIe 6.0（需主机 max_link_gen≥6）"
+}

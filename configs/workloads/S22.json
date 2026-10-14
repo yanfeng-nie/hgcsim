@@ -1,0 +1,26 @@
+{
+  "name": "R-MAT-22",
+  "dataset": {
+    "name": "R-MAT scale 22",
+    "nodes": 4194304,
+    "edges": 67108864,
+    "feature_dim": 128,
+    "clusters": 64,
+    "has_graph": true,
+    "degree_skew": 0.75,
+    "locality": 0.1,
+    "metis_cut_base": 0.15
+  },
+  "algorithm": {
+    "name": "propagate+KMeans",
+    "encoder_dims": [
+      128,
+      64
+    ],
+    "encoder_epochs": 0,
+    "method": "kmeans",
+    "iterations": 20,
+    "prop_hops": 2,
+    "prop_every_iter": false
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "type": "NMP",
+  "params": {
+    "units": 2048,
+    "unit_freq_mhz": 300,
+    "int_ops_per_cycle_per_unit": 16,
+    "fp_ops_per_cycle_per_unit": 16,
+    "unit_bw_gbps": 4.8,
+    "mb_per_unit": 32,
+    "inter_unit_via_host": 0,
+    "inter_unit_bw_gbps": 400,
+    "host_xfer_efficiency": 0.9,
+    "outstanding_per_unit": 16,
+    "launch_overhead_us": 20
+  },
+  "memory": {
+    "type": "HBM",
+    "params": {
+      "stacks": 4,
+      "interface_bits": 1024,
+      "gbps_per_pin": 3.2,
+      "gb_per_stack": 16
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 4,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "nmp_hbm_pim",
+  "description": "近内存计算（HBM-PIM 量级）：2048 个 FP16 SIMD PCU，64GB HBM，内部≈9.8TB/s，PCIe 4.0"
+}

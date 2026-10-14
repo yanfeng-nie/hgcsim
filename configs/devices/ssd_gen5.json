@@ -1,0 +1,29 @@
+{
+  "type": "SSD",
+  "params": {
+    "max_link_gen": 5
+  },
+  "memory": {
+    "type": "FLASH",
+    "params": {
+      "nand_channels": 8,
+      "channel_mtps": 3600,
+      "dies": 128,
+      "controller_bw_gbps": 15,
+      "capacity_tb": 8,
+      "controller_iops_m": 2.5
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 5,
+        "lanes": 4
+      }
+    }
+  },
+  "template": "ssd_gen5",
+  "description": "PCIe 5.0 NVMe SSD 8TB（≈14GB/s）"
+}

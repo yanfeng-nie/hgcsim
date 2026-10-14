@@ -1,0 +1,18 @@
+{
+  "type": "NPU",
+  "params": {
+    "cxl_max_version": 3.0
+  },
+  "attach": {
+    "to": "cxlsw0",
+    "link": {
+      "type": "CXL",
+      "params": {
+        "version": 3.0,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "npu_cxl_type2",
+  "description": "CXL Type-2 NPU：同上，经 CXL 3.0 挂到 CXL 交换机，可一致性访问 CXL 内存（需先添加 cxlsw0）"
+}

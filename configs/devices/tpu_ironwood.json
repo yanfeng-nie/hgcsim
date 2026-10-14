@@ -1,0 +1,34 @@
+{
+  "type": "TPU",
+  "params": {
+    "mxu_count": 8,
+    "mxu_dim": 256,
+    "freq_ghz": 2.2,
+    "fp8_ratio": 2,
+    "sparsecores": 4,
+    "vpu_flops_per_cycle": 16384,
+    "vmem_mb": 256,
+    "max_link_gen": 5
+  },
+  "memory": {
+    "type": "HBM",
+    "params": {
+      "stacks": 8,
+      "interface_bits": 1024,
+      "gbps_per_pin": 7.2,
+      "gb_per_stack": 24
+    }
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 5,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "tpu_ironwood",
+  "description": "TPU（Ironwood 量级）：8×256² MXU，FP8≈4.6 PFLOPS，192GB HBM3E≈7.4TB/s，4 SparseCore"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "naive_gpu",
+  "description": "朴素 CPU+GPU 卸载：特征提取与聚类迭代放 GPU，图构建放 CPU，FP32，无流水线重叠，按编号区间划分",
+  "placement": {"features": "home", "graph": "home", "spill": "auto"},
+  "partition": {"num_chunks": "auto", "method": "range"},
+  "pipeline": {"overlap": false, "prefetch_depth": 1},
+  "stages": {
+    "feature_extraction": {"devices": ["gpu0"], "precision": "fp32"},
+    "graph_construction": {"devices": ["cpu0"], "precision": "fp32"},
+    "clustering": {"devices": ["gpu0"], "precision": "fp32"}
+  },
+  "leader": "cpu0"
+}

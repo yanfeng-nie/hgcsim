@@ -1,0 +1,26 @@
+{
+  "name": "B4-ogbn-products",
+  "dataset": {
+    "name": "ogbn-products",
+    "nodes": 2449029,
+    "edges": 123718280,
+    "feature_dim": 100,
+    "clusters": 47,
+    "has_graph": true,
+    "degree_skew": 0.6,
+    "locality": 0.35,
+    "metis_cut_base": 0.04
+  },
+  "algorithm": {
+    "name": "S3GC-like",
+    "encoder_dims": [
+      256,
+      128
+    ],
+    "encoder_epochs": 10,
+    "method": "kmeans",
+    "iterations": 30,
+    "prop_hops": 2,
+    "prop_every_iter": false
+  }
+}

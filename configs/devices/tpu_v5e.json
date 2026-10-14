@@ -1,0 +1,16 @@
+{
+  "type": "TPU",
+  "params": {},
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 4,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "tpu_v5e",
+  "description": "TPU（v5e 量级）：4×128² MXU，BF16≈197 TFLOPS，16GB HBM 819GB/s"
+}

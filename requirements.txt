@@ -1,0 +1,4 @@
+# Python 前端依赖（C++ 模拟器本身无第三方依赖；nlohmann/json 已内置于 third_party/）
+streamlit>=1.28,<2
+plotly>=5.10
+pandas>=1.3

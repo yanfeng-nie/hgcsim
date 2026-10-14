@@ -1,0 +1,16 @@
+{
+  "type": "CSD",
+  "params": {},
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 3,
+        "lanes": 4
+      }
+    }
+  },
+  "template": "csd_smartssd",
+  "description": "可计算存储（SmartSSD 量级）：内嵌 FPGA≈0.3 TFLOPS，4TB，内部≈14GB/s，PCIe 3.0 x4"
+}

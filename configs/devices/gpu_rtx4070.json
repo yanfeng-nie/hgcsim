@@ -1,0 +1,20 @@
+{
+  "type": "GPU",
+  "params": {},
+  "memory": {
+    "type": "GDDR",
+    "params": {}
+  },
+  "attach": {
+    "to": "cpu0",
+    "link": {
+      "type": "PCIe",
+      "params": {
+        "gen": 4,
+        "lanes": 16
+      }
+    }
+  },
+  "template": "gpu_rtx4070",
+  "description": "消费级 GPU（默认 PC）：46 SM，12GB GDDR6X 504GB/s，PCIe 4.0 x16"
+}
